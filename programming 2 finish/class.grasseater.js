@@ -80,7 +80,7 @@ class GrassEater {
                 }
             }
 
-            if (this.energy >= 10) {
+            if (this.energy >= 9) {
                 this.mul();
             }
 

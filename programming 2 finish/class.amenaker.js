@@ -50,7 +50,7 @@ class Amenaker {
         var emptyCoordinates = this.chooseCell(3);
         var emptyCoord = random(emptyCoordinates);
         if (emptyCoord) {
-            this.energy -= 2;
+            this.energy -= 5;
             var norX = emptyCoord[0];
             var norY = emptyCoord[1];
 
@@ -62,6 +62,7 @@ class Amenaker {
 
             if (this.energy <= 0) {
                 this.die();
+                console.log("mera");
             }
 
         }
@@ -139,13 +140,13 @@ class Amenaker {
             this.move();
         }
 
-        if (this.energy >= 30){
+        if (this.energy >= 40){
             this.mull();
         }
 
     }
 
-    mul() {
+    mull() {
         var emptyCells = this.chooseCell(0);
         var newCell = random(emptyCells);
 

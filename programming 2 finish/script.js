@@ -22,7 +22,7 @@ function setup() {
 
         }
     }
-    /*matrix = [
+    matrix = [
             [0, 0, 2, 0, 1, 0, 4, 0],
             [0, 0, 0, 0, 0, 0, 0, 0],
             [0, 0, 2, 0, 0, 0, 1, 0],
@@ -31,7 +31,7 @@ function setup() {
             [0, 3, 0, 0, 0, 0, 0, 0],
             [0, 0, 0, 0, 1, 0, 0, 0],
             [0, 0, 0, 0, 0, 0, 3, 0]
-        ];*/
+        ];
     for (var j = 0; j < matrix.length; j++) {
         for (var i = 0; i < matrix[0].length; i++) {
             if (matrix[j][i] == 1) {

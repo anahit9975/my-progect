@@ -101,8 +101,8 @@ class Bomb {
                             }
                         }
                     }
-                    this.die();
 
+                    this.die();
                 }
 
             }
@@ -112,7 +112,7 @@ class Bomb {
     die() {
         matrix[this.y][this.x] = 0;
         for (var i in bombArr) {
-            if (bombArr[i].x == this.x && bombArr[i].y == this.y) {
+            if (bombArr.x == this.x && bombArr.y == this.y) {
                 bombArr.splice(i, 1);
                 break;
             }
