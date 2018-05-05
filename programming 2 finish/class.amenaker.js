@@ -1,10 +1,8 @@
 
-class Amenaker {
+class Amenaker extends kendaniEak{
 
     constructor(x, y, index) {
-        this.x = x;
-        this.y = y;
-        this.index = index;
+        super(x,y,index);
         this.energy = 7;
     }
 

@@ -1,8 +1,7 @@
 
-class Bomb {
+class Bomb extends kendaniEak{
     constructor(x, y, index) {
-        this.x = x;
-        this.y = y;
+      super(x,y,index);
         this.index = index;
     }
 

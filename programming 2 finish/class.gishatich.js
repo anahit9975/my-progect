@@ -1,9 +1,7 @@
 var found = [];
-class Gishatich {
+class Gishatich extends kendaniEak{
     constructor(x, y, index) {
-        this.x = x;
-        this.y = y;
-        this.index = index;
+       super(x,y,index);
         this.energy = 10;
 
     }
