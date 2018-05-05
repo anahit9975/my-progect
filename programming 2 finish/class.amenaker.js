@@ -141,12 +141,12 @@ class Amenaker {
         }
 
         if (this.energy >= 40){
-            this.mull();
+            this.mul();
         }
 
     }
 
-    mull() {
+    mul() {
         var emptyCells = this.chooseCell(0);
         var newCell = random(emptyCells);
 

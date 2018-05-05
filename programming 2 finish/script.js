@@ -45,7 +45,7 @@ function setup() {
 
             }
             else if (matrix[j][i] == 4) {
-                var amen = new Amenaker(i, j, 1);
+                var amen = new Amenaker(i, j, 2);
                 amenakerArr.push(amen);
 
             }
