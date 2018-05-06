@@ -28,7 +28,7 @@ class Gishatich extends kendaniEak {
 
     chooseCell(character) {
         this.getNewCoordinates();
-        return sudper.chooseCell(character);
+        return super.chooseCell(character);
     }
 
     move() {
