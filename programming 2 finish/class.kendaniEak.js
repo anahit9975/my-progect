@@ -18,7 +18,7 @@ class kendaniEak {
         ];
     }
 
-    chooseCall(character) {
+    chooseCell(character) {
         var found = [];
         for (var i in this.directions) {
             var x = this.directions[i][0];

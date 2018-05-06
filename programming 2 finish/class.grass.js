@@ -8,7 +8,7 @@ class Grass extends kendaniEak {
 
     mul() {
         this.multiply += 2;
-        var emptyCells = this.chooseCall(0);
+        var emptyCells = this.chooseCell(0);
         var newCell = random(emptyCells);
 
 

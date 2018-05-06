@@ -22,7 +22,7 @@ class GrassEater extends kendaniEak {
 
     chooseCell(character) {
         this.getNewCoordinates();
-        return super.chooseCall(character);
+        return super.chooseCell(character);
     }
 
     move() {

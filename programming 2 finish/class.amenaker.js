@@ -29,8 +29,7 @@ class Amenaker extends kendaniEak {
 
     chooseCell(character) {
         this.getNewCoordinates();
-        var found = [];
-        return super.chooseCall(character);
+        return super.chooseCell(character);
     }
 
     move() {

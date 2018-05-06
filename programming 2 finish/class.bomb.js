@@ -21,7 +21,7 @@ class Bomb extends kendaniEak {
 
     chooseCell(character) {
         this.getNewCoordinates();
-        return super.chooseCall(character);
+        return super.chooseCell(character);
     }
 
 
@@ -31,7 +31,7 @@ class Bomb extends kendaniEak {
         var bumcell = random(this.chooseCell(4));
         if (bumcell) {
 
-            this.bumCoord();
+            this. getNewCoordinates();
 
 
             for (var i in this.directions) {
