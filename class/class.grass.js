@@ -1,3 +1,4 @@
+var kendaniEak = require("./class.kendaniEak");
 class Grass extends kendaniEak {
     constructor(x, y, index) {
         super(x, y, index);

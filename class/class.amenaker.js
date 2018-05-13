@@ -1,4 +1,4 @@
-
+var kendaniEak = require("./class.kendaniEak");
 class Amenaker extends kendaniEak {
 
     constructor(x, y, index) {

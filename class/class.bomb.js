@@ -1,4 +1,4 @@
-
+var kendaniEak = require("./class.kendaniEak");
 class Bomb extends kendaniEak {
     constructor(x, y, index) {
         super(x, y, index);
