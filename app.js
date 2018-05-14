@@ -20,20 +20,23 @@ var amenaker = require("./class/class.gishatich");
 var bomb = require("./class/class.bomb");
 var sevuk = require("./class/class.sevuk");
 
+setInterval(function () { p5func() }, 3000);
 
-var xQanak = 20;
-var yQanak = 40;
-var matrix = [];
-var n = 30;
-var side = 30;
-var grassArr = [];
-var grassEatArr = [];
-var gishatichArr = [];
-var amenakerArr = [];
-var bombArr = [];
-var sevArr = [];
+function p5func() {
 
-for (var y = 0; y < yQanak; y++) {
+    var xQanak = 20;
+    var yQanak = 40;
+    var matrix = [];
+    var n = 30;
+    var side = 30;
+    var grassArr = [];
+    var grassEatArr = [];
+    var gishatichArr = [];
+    var amenakerArr = [];
+    var bombArr = [];
+    var sevArr = [];
+
+    for (var y = 0; y < yQanak; y++) {
         matrix[y] = [];
         for (var x = 0; x < xQanak; x++) {
             matrix[y][x] = Math.round(Math.random() * 6);
@@ -82,7 +85,7 @@ for (var y = 0; y < yQanak; y++) {
     }
 
 
- for (var i in grassArr) {
+    for (var i in grassArr) {
         grassArr[i].mul();
 
     }
@@ -105,4 +108,4 @@ for (var y = 0; y < yQanak; y++) {
         bombArr[i].kill();
 
     }
-
+}
