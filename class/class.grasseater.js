@@ -1,5 +1,5 @@
 var kendaniEak = require("./class.kendaniEak");
-class GrassEater extends kendaniEak {
+module.exports = class GrassEater extends kendaniEak {
     constructor(x, y, index) {
         super(x, y, index);
         this.energy = 8;
@@ -26,8 +26,11 @@ class GrassEater extends kendaniEak {
     }
 
     move() {
-        var datarkkordinatner = this.chooseCell(0);
-        var mivandak = random(datarkkordinatner);
+        var emptyCoordinates = this.chooseCell(0);
+
+        var kord = Math.floor(Math.random() * emptyCoordinates.length);
+        var mivandak = emptyCoordinates[kord];
+
         if (mivandak) {
             this.energy--;
             var norX = mivandak[0];
@@ -48,7 +51,9 @@ class GrassEater extends kendaniEak {
 
     eat() {
         var kerxot = this.chooseCell(1);
-        var rnd = random(kerxot);
+
+        var kord = Math.floor(Math.random() * kerxot.length);
+        var rnd = kerxot[kord];
         if (rnd) {
             this.energy++;
             var kerX = rnd[0];
@@ -79,7 +84,9 @@ class GrassEater extends kendaniEak {
 
     mul() {
         var emptyCells = this.chooseCell(0);
-        var newCell = random(emptyCells);
+
+        var kord = Math.floor(Math.random() * emptyCells.length);
+        var newCell = emptyCells[kord];
 
 
 

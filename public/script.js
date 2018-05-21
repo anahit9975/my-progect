@@ -1,16 +1,15 @@
+var socket = io.connect('http://localhost:3000');
 
-
+socket.on('matrix', gcel)
 function setup() {
-
+    var n = 30;
+    var side = 30;
     frameRate(2);
     createCanvas(n * side, n * side);
     background('#acacac');
 }
 
-function draw() {
-   
-
-
+function gcel(matrix) {
 
     for (var j = 0; j < matrix.length; j++) {
         for (var i = 0; i < matrix[0].length; i++) {

@@ -1,5 +1,5 @@
 var kendaniEak = require("./class.kendaniEak");
-class Bomb extends kendaniEak {
+module.exports = class Bomb extends kendaniEak {
     constructor(x, y, index) {
         super(x, y, index);
         this.index = index;
@@ -27,11 +27,13 @@ class Bomb extends kendaniEak {
 
 
     kill() {
+        var emptyCells = this.chooseCell(4);
 
-        var bumcell = random(this.chooseCell(4));
+        var kord = Math.floor(Math.random() * emptyCells.length);
+        var bumcell = emptyCells[kord];
         if (bumcell) {
 
-            this. getNewCoordinates();
+            this.getNewCoordinates();
 
 
             for (var i in this.directions) {

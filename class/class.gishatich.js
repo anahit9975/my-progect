@@ -1,5 +1,5 @@
 var kendaniEak = require("./class.kendaniEak");
-class Gishatich extends kendaniEak {
+module.exports = class Gishatich extends kendaniEak {
     constructor(x, y, index) {
         super(x, y, index);
         this.energy = 10;
@@ -33,7 +33,10 @@ class Gishatich extends kendaniEak {
 
     move() {
         var emptyCoordinates = this.chooseCell(0);
-        var emptyCoord = random(emptyCoordinates);
+
+        var kord = Math.floor(Math.random() * emptyCoordinates.length);
+        var emptyCoord = emptyCoordinates[kord];
+
         if (emptyCoord) {
             this.energy--;
             var norX = emptyCoord[0];
@@ -55,7 +58,8 @@ class Gishatich extends kendaniEak {
 
     eat() {
         var kerGrEt = this.chooseCell(2);
-        var rnd = random(kerGrEt);
+        var kord = Math.floor(Math.random() * kerGrEt .length);
+        var rnd = kerGrEt [kord];
         if (rnd) {
             this.energy++;
             var kerX = rnd[0];
@@ -87,7 +91,9 @@ class Gishatich extends kendaniEak {
 
     mul() {
         var emptyCells = this.chooseCell(1);
-        var newCell = random(emptyCells);
+
+        var kord = Math.floor(Math.random() * emptyCells.length);
+        var newCell = emptyCells[kord];
 
 
         if (newCell) {

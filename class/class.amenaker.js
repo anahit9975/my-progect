@@ -1,5 +1,5 @@
 var kendaniEak = require("./class.kendaniEak");
-class Amenaker extends kendaniEak {
+module.exports = class Amenaker extends kendaniEak {
 
     constructor(x, y, index) {
         super(x, y, index);
@@ -34,7 +34,10 @@ class Amenaker extends kendaniEak {
 
     move() {
         var emptyCoordinates = this.chooseCell(3);
-        var emptyCoord = random(emptyCoordinates);
+
+        var index = Math.floor(Math.random() * emptyCoordinates.length);
+        var emptyCoord = emptyCoordinates[index];
+
         if (emptyCoord) {
             this.energy -= 5;
             var norX = emptyCoord[0];
@@ -57,14 +60,16 @@ class Amenaker extends kendaniEak {
     eat() {
 
         var kerameninch = this.chooseCell(3);
-        var rnd3 = random(kerameninch);
+        var kord = Math.floor(Math.random() * kerameninch.length);
+        var rnd3 = kerameninch[kord];
 
         var kerameninch = this.chooseCell(2);
-        var rnd2 = random(kerameninch);
+        var kord = Math.floor(Math.random() * kerameninch.length);
+        var rnd2 = kerameninch[kord];
 
         var kerameninch = this.chooseCell(1);
-        var rnd = random(kerameninch);
-
+        var kord = Math.floor(Math.random() * kerameninch.length);
+        var rnd = kerameninch[kord];
         if (rnd3) {
             this.energy++;
             var kerX = rnd3[0];
