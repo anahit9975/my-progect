@@ -78,7 +78,7 @@ module.exports = class Gishatich extends kendaniEak {
                 }
             }
 
-            if (this.energy >= 20) {
+            if (this.energy >= 20  ) {
                 this.mul();
             }
 

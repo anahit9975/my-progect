@@ -72,7 +72,7 @@ module.exports = class GrassEater extends kendaniEak {
                 }
             }
 
-            if (this.energy >= 9) {
+            if (this.energy >= 9 ) {
                 this.mul();
             }
 

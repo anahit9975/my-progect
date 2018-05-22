@@ -30,7 +30,7 @@ grassEatArr = [];
 gishatichArr = [];
 amenakerArr = [];
 bombArr = [];
-sevArr = [];
+//sevArr = [];
 
 for (var y = 0; y < yQanak; y++) {
     matrix[y] = [];
@@ -64,7 +64,7 @@ for (var j = 0; j < matrix.length; j++) {
 
         }
         else if (matrix[j][i] == 4) {
-            var amen = new Amenaker(i, j, 2);
+            var amen = new Amenaker(i, j, 1);
             amenakerArr.push(amen);
 
         }
@@ -114,6 +114,7 @@ function p5func() {
         bombArr[i].kill();
 
     }
+    
 
     io.sockets.emit("matrix", matrix);
 }

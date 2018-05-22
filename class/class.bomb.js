@@ -44,9 +44,10 @@ module.exports = class Bomb extends kendaniEak {
                 if (norx >= 0 && norx < matrix[0].length && nory >= 0 && nory < matrix.length) {
 
                     if (matrix[nory][norx] == 4) {
-                        matrix[nory][norx] = 6;
-                        var sev = new Sevuk(norx, nory);
-                        sevArr.push(sev);
+                        //matrix[nory][norx] = 6;
+                         matrix[nory][norx] = 15;
+                        //var sev = new Sevuk(norx, nory);
+                        //sevArr.push(sev);
                         matrix[this.y][this.x] = 0;
                         for (var i in amenakerArr) {
                             if (amenakerArr.x == this.x && amenakerArr.y == this.y) {
@@ -57,9 +58,10 @@ module.exports = class Bomb extends kendaniEak {
                     }
 
                     else if (matrix[nory][norx] == 1) {
-                        matrix[nory][norx] = 6;
-                        var sev = new Sevuk(norx, nory);
-                        sevArr.push(sev);
+                       // matrix[nory][norx] = 6;
+                        matrix[nory][norx] = 15;
+                       // var sev = new Sevuk(norx, nory);
+                        //sevArr.push(sev);
                         matrix[this.y][this.x] = 0;
                         for (var i in grassArr) {
                             if (grassArr.x == this.x && grassArr.y == this.y) {
@@ -69,9 +71,10 @@ module.exports = class Bomb extends kendaniEak {
                         }
                     }
                     else if (matrix[nory][norx] == 2) {
-                        matrix[nory][norx] = 6;
-                        var sev = new Sevuk(norx, nory);
-                        sevArr.push(sev);
+                        //matrix[nory][norx] = 6;
+                          matrix[nory][norx] = 15;
+                       // var sev = new Sevuk(norx, nory);
+                       // sevArr.push(sev);
                         matrix[this.y][this.x] = 0;
                         for (var i in grassEatArr) {
                             if (grassEatArr.x == this.x && grassEatArr.y == this.y) {
@@ -81,9 +84,10 @@ module.exports = class Bomb extends kendaniEak {
                         }
                     }
                     else if (matrix[nory][norx] == 3) {
-                        matrix[nory][norx] = 6;
-                        var sev = new Sevuk(norx, nory);
-                        sevArr.push(sev);
+                        //matrix[nory][norx] = 6;
+                           matrix[nory][norx] = 15;
+                        //var sev = new Sevuk(norx, nory);
+                        //sevArr.push(sev);
                         matrix[this.y][this.x] = 0;
                         for (var i in gishatichArr) {
                             if (gishatichArr.x == this.x && gishatichArr.y == this.y) {

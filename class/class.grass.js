@@ -15,7 +15,7 @@ module.exports = class Grass extends kendaniEak {
         var newCell  = emptyCells[kord];
 
 
-        if (newCell && this.multiply >= 3) {
+        if (newCell && this.multiply >= 3 &&  matrix[this.index] != 15) {
 
             var newX = newCell[0];
             var newY = newCell[1];

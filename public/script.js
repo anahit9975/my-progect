@@ -2,8 +2,8 @@ var socket = io.connect('http://localhost:3000');
 
 socket.on('matrix', gcel)
 function setup() {
-    var n = 30;
-    var side = 30;
+     n = 30;
+     side = 30;
     frameRate(2);
     createCanvas(n * side, n * side);
     background('#acacac');

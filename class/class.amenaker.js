@@ -49,9 +49,8 @@ module.exports = class Amenaker extends kendaniEak {
             this.x = norX;
             this.y = norY;
 
-            if (this.energy <= 0) {
+            if (this.energy <= 0 ) {
                 this.die();
-                console.log("mera");
             }
 
         }
@@ -127,11 +126,11 @@ module.exports = class Amenaker extends kendaniEak {
             }
         }
 
-        else {
+        else if ( matrix[this.index] != 15) {
             this.move();
         }
 
-        if (this.energy >= 40) {
+        if (this.energy >= 40 &&  matrix[this.index] != 15 ) {
             this.mul();
         }
 
@@ -139,7 +138,9 @@ module.exports = class Amenaker extends kendaniEak {
 
     mul() {
         var emptyCells = this.chooseCell(0);
-        var newCell = random(emptyCells);
+
+       var kord = Math.floor(Math.random() * emptyCells.length);
+        var newCell = emptyCells[kord];
 
 
         if (newCell) {
