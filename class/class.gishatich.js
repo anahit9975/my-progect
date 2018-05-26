@@ -2,7 +2,7 @@ var kendaniEak = require("./class.kendaniEak");
 module.exports = class Gishatich extends kendaniEak {
     constructor(x, y, index) {
         super(x, y, index);
-        this.energy = 10;
+        this.energy = 8;
 
     }
     getNewCoordinates() {

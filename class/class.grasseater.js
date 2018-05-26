@@ -41,10 +41,11 @@ module.exports = class GrassEater extends kendaniEak {
 
             this.x = norX;
             this.y = norY;
-
-            if (this.energy <= 0) {
+           
+             if (this.energy <= 0) {
                 this.die();
             }
+
 
         }
     }
@@ -71,8 +72,12 @@ module.exports = class GrassEater extends kendaniEak {
                     break;
                 }
             }
-
-            if (this.energy >= 9 ) {
+            if (count >= 10 && count <= 20) {
+                if (this.energy >= 20) {
+                    this.mul();
+                }
+            }
+           else  if (this.energy >= 9) {
                 this.mul();
             }
 

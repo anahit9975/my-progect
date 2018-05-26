@@ -35,8 +35,8 @@ module.exports = class Amenaker extends kendaniEak {
     move() {
         var emptyCoordinates = this.chooseCell(3);
 
-        var index = Math.floor(Math.random() * emptyCoordinates.length);
-        var emptyCoord = emptyCoordinates[index];
+        var kord = Math.floor(Math.random() * emptyCoordinates.length);
+        var emptyCoord = emptyCoordinates[kord];
 
         if (emptyCoord) {
             this.energy -= 5;
@@ -49,10 +49,11 @@ module.exports = class Amenaker extends kendaniEak {
             this.x = norX;
             this.y = norY;
 
-            if (this.energy <= 0 ) {
-                this.die();
-            }
+        }
+       
 
+        if (this.energy <= 0 ) {
+            this.die();
         }
     }
 
@@ -126,13 +127,20 @@ module.exports = class Amenaker extends kendaniEak {
             }
         }
 
-        else if ( matrix[this.index] != 15) {
+        else {
             this.move();
         }
-
-        if (this.energy >= 40 &&  matrix[this.index] != 15 ) {
+        
+        if (count >= 10 && count <= 20) {
+            if (this.energy >= 60  ) {
+                this.mul();
+            }    
+        }
+       else  if (this.energy >= 40  ) {
             this.mul();
         }
+        
+        
 
     }
 
@@ -144,7 +152,7 @@ module.exports = class Amenaker extends kendaniEak {
 
 
         if (newCell) {
-            this.energy = 15;
+            this.energy = 10;
             var newX = newCell[0];
             var newY = newCell[1];
             matrix[newY][newX] = this.index;

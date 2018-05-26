@@ -20,6 +20,7 @@ var Amenaker = require("./class/class.amenaker");
 var Bomb = require("./class/class.bomb");
 var sevuk = require("./class/class.sevuk");
 
+count = 0;
 var xQanak = 20;
 var yQanak = 40;
 matrix = [];
@@ -30,6 +31,7 @@ grassEatArr = [];
 gishatichArr = [];
 amenakerArr = [];
 bombArr = [];
+
 //sevArr = [];
 
 for (var y = 0; y < yQanak; y++) {
@@ -39,7 +41,7 @@ for (var y = 0; y < yQanak; y++) {
 
     }
 }
-matrix = [
+/*matrix = [
     [0, 0, 2, 0, 1, 0, 4, 0],
     [0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 2, 0, 0, 0, 1, 0],
@@ -48,7 +50,7 @@ matrix = [
     [0, 3, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 1, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 3, 0]
-];
+];*/
 
 
 for (var j = 0; j < matrix.length; j++) {
@@ -64,7 +66,7 @@ for (var j = 0; j < matrix.length; j++) {
 
         }
         else if (matrix[j][i] == 4) {
-            var amen = new Amenaker(i, j, 1);
+            var amen = new Amenaker(i, j, 10);
             amenakerArr.push(amen);
 
         }
@@ -90,7 +92,7 @@ io.on('connection', function (socket) {
 });
 
 function p5func() {
-
+    count++;
     for (var i in grassArr) {
         grassArr[i].mul();
 

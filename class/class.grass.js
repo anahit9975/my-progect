@@ -8,14 +8,20 @@ module.exports = class Grass extends kendaniEak {
 
 
     mul() {
-        this.multiply += 2;
+        if (count >=10 && count <=20 ){
+            this.multyply +=1;
+        } 
+        else{
+            this.multiply += 6;
+        }
+       
         var emptyCells = this.chooseCell(0);
 
      var kord = Math.floor(Math.random() * emptyCells.length);
         var newCell  = emptyCells[kord];
 
 
-        if (newCell && this.multiply >= 3 &&  matrix[this.index] != 15) {
+        if (newCell && this.multiply >= 7 ) {
 
             var newX = newCell[0];
             var newY = newCell[1];
