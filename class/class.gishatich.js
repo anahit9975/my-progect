@@ -38,7 +38,7 @@ module.exports = class Gishatich extends kendaniEak {
         var emptyCoord = emptyCoordinates[kord];
 
         if (emptyCoord) {
-            this.energy--;
+          
             var norX = emptyCoord[0];
             var norY = emptyCoord[1];
 
@@ -47,7 +47,7 @@ module.exports = class Gishatich extends kendaniEak {
 
             this.x = norX;
             this.y = norY;
-
+            this.energy--;
             if (this.energy <= 0) {
                 this.die();
             }
@@ -61,6 +61,7 @@ module.exports = class Gishatich extends kendaniEak {
         var kord = Math.floor(Math.random() * kerGrEt .length);
         var rnd = kerGrEt [kord];
         if (rnd) {
+            gishaticheat++;
             this.energy++;
             var kerX = rnd[0];
             var kerY = rnd[1];

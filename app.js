@@ -1,7 +1,10 @@
 var express = require("express");
 var app = express();
+var fs = require('fs');
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
+
+app.set('port', process.env.PORT || 3000);
 
 app.use(express.static("public"));
 
@@ -9,7 +12,7 @@ app.get("/", function (req, res) {
     res.redirect("public/index.html");
 });
 
-server.listen(3000);
+server.listen(app.get('port'));
 
 
 
@@ -20,7 +23,12 @@ var Amenaker = require("./class/class.amenaker");
 var Bomb = require("./class/class.bomb");
 var sevuk = require("./class/class.sevuk");
 
-count = 0;
+
+grassmul = 0;
+grasseatmove = 0;
+gishaticheat = 0;
+amenakerdie = 0;
+
 var xQanak = 20;
 var yQanak = 40;
 matrix = [];
@@ -32,12 +40,13 @@ gishatichArr = [];
 amenakerArr = [];
 bombArr = [];
 
+
 //sevArr = [];
 
 for (var y = 0; y < yQanak; y++) {
     matrix[y] = [];
     for (var x = 0; x < xQanak; x++) {
-        matrix[y][x] = Math.floor(Math.random() * 6);
+        matrix[y][x] = Math.floor(Math.random() * 5);
 
     }
 }
@@ -86,15 +95,39 @@ for (var j = 0; j < matrix.length; j++) {
 
 
 //server
-
-io.on('connection', function (socket) {
-    setInterval(p5func, 2000);
-});
+wether = 'dzmer';
+count = 0;
+takter = 0;
+setInterval(p5func, 500);
+var obj = {
+    "xotbazm": [],
+    "xotakersharj": [],
+    "gishtichutel": [],
+    "amenakermernel": []
+};
 
 function p5func() {
     count++;
+    takter++;
+    if (count % 80 == 0) {
+        wether = 'dzmer';
+    }
+    if (count % 80 == 20) {
+        wether = 'garun';
+    }
+    if (count % 80 == 40) {
+        wether = 'amar';
+    }
+    if (count % 80 == 60) {
+        wether = 'ashun';
+    }
+
+
     for (var i in grassArr) {
-        grassArr[i].mul();
+        if (wether != 'dzmer') {
+            grassArr[i].mul();
+        }
+
 
     }
 
@@ -103,7 +136,11 @@ function p5func() {
     }
 
     for (var i in gishatichArr) {
-        gishatichArr[i].eat();
+        if (wether != 'amar') {
+            gishatichArr[i].eat();
+        }
+
+
 
     }
 
@@ -116,10 +153,34 @@ function p5func() {
         bombArr[i].kill();
 
     }
-    
+
 
     io.sockets.emit("matrix", matrix);
+    io.sockets.emit("nerkir", wether);
+
+
+    var myJson = JSON.stringify(obj, null, ' ');
+    if (takter % 10 == 0) {
+        console.log(takter, takter % 10);
+
+        obj.xotbazm.push(grassmul);
+        obj.xotakersharj.push(grasseatmove);
+        obj.gishtichutel.push(gishaticheat);
+        obj.amenakermernel.push(amenakerdie);
+        console.log(myJson);
+        fs.writeFile("hello.json", myJson, function (err) {
+            console.log("fs.writeFile ended");
+        });
+
+        //console.log(obj);
+    }
 }
+
+
+io.on('connection', function (socket) {
+
+});
+
 
 
 

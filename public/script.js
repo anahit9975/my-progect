@@ -1,34 +1,26 @@
 var socket = io.connect('http://localhost:3000');
 
-var count = 0;
+
 socket.on('matrix', gcel)
+socket.on('nerkir', colors)
 function setup() {
     n = 30;
     side = 30;
     frameRate(2);
     createCanvas(n * side, n * side);
-    background('#acacac');
+
 }
 
 function gcel(matrix) {
-    count++;
-    console.log(count);
+
+    // console.log(count);
     for (var j = 0; j < matrix.length; j++) {
         for (var i = 0; i < matrix[0].length; i++) {
 
             if (matrix[j][i] == 1) {
-                if (count >= 10 && count <= 20) {
-                    fill("white");
-                }
-                else {
-                    fill("green");
-                }
+                fill("green");
                 rect(i * side, j * side, side, side);
             }
-
-
-
-
 
             else if (matrix[j][i] == 2) {
                 fill("yellow");
@@ -36,7 +28,7 @@ function gcel(matrix) {
             }
 
             else if (matrix[j][i] == 0) {
-                fill('#acacac');
+                fill(col);
                 rect(i * side, j * side, side, side);
             }
 
@@ -62,5 +54,21 @@ function gcel(matrix) {
             }
         }
     }
+}
+var col = '#acacac';
+function colors(wether) {
+    if (wether == 'dzmer') {
+        col = 'white';
+    }
+    else if (wether == 'garun') {
+        col = '#F08080'
+    }
+    else if (wether == 'amar') {
+        col = '#FF69B4'
+    }
+    else if (wether == 'ashun') {
+        col = '#DAA520'
+    }
+
 }
 

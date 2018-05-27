@@ -32,6 +32,7 @@ module.exports = class GrassEater extends kendaniEak {
         var mivandak = emptyCoordinates[kord];
 
         if (mivandak) {
+            grasseatmove++;
             this.energy--;
             var norX = mivandak[0];
             var norY = mivandak[1];
@@ -41,8 +42,8 @@ module.exports = class GrassEater extends kendaniEak {
 
             this.x = norX;
             this.y = norY;
-           
-             if (this.energy <= 0) {
+
+            if (this.energy <= 0) {
                 this.die();
             }
 
@@ -72,12 +73,12 @@ module.exports = class GrassEater extends kendaniEak {
                     break;
                 }
             }
-            if (count >= 10 && count <= 20) {
-                if (this.energy >= 20) {
-                    this.mul();
-                }
+            if ( wether != 'ashun') {
+                 if (this.energy >= 9) {
+                this.mul();
             }
-           else  if (this.energy >= 9) {
+            }
+             else if (this.energy >= 20) {
                 this.mul();
             }
 

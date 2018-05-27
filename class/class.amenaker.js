@@ -38,8 +38,8 @@ module.exports = class Amenaker extends kendaniEak {
         var kord = Math.floor(Math.random() * emptyCoordinates.length);
         var emptyCoord = emptyCoordinates[kord];
 
+
         if (emptyCoord) {
-            this.energy -= 5;
             var norX = emptyCoord[0];
             var norY = emptyCoord[1];
 
@@ -49,12 +49,15 @@ module.exports = class Amenaker extends kendaniEak {
             this.x = norX;
             this.y = norY;
 
-        }
-       
 
-        if (this.energy <= 0 ) {
+        }
+        this.energy--;
+        if (this.energy <= 0) {
             this.die();
         }
+
+
+
     }
 
     eat() {
@@ -130,24 +133,25 @@ module.exports = class Amenaker extends kendaniEak {
         else {
             this.move();
         }
-        
-        if (count >= 10 && count <= 20) {
-            if (this.energy >= 60  ) {
+
+        if (wether == 'garun') {
+            if (this.energy >= 20) {
                 this.mul();
-            }    
+            }
         }
-       else  if (this.energy >= 40  ) {
+        if (this.energy >= 40) {
             this.mul();
         }
-        
-        
+
+
+
 
     }
 
     mul() {
         var emptyCells = this.chooseCell(0);
 
-       var kord = Math.floor(Math.random() * emptyCells.length);
+        var kord = Math.floor(Math.random() * emptyCells.length);
         var newCell = emptyCells[kord];
 
 
@@ -163,10 +167,11 @@ module.exports = class Amenaker extends kendaniEak {
     }
 
     die() {
-        matrix[this.y][this.x] = 0;
         for (var i in amenakerArr) {
-            if (amenakerArr.x == this.x && amenakerArr.y == this.y) {
+            if (amenakerArr[i].x == this.x && amenakerArr[i].y == this.y) {
                 amenakerArr.splice(i, 1);
+                matrix[this.y][this.x] = 0;
+                amenakerdie++;
                 break;
             }
         }

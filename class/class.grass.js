@@ -22,7 +22,8 @@ module.exports = class Grass extends kendaniEak {
 
 
         if (newCell && this.multiply >= 7 ) {
-
+            grassmul++;
+          
             var newX = newCell[0];
             var newY = newCell[1];
             matrix[newY][newX] = this.index;
